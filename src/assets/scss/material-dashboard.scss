@@ -40,12 +40,12 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Core Components
 @import 'core/layout';
 @import 'core/buttons';
-@import 'core/checkboxes';
+// @import 'core/checkboxes';
 @import 'dashboard/cards';
 @import 'core/custom-forms';
 @import 'core/switches';
 @import 'core/example-pages';
-@import 'core/radios';
+// @import 'core/radios';
 @import 'core/carousel';
 @import 'dashboard/forms';
 @import 'core/input-group';

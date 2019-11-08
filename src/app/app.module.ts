@@ -10,7 +10,7 @@ import {
 	MatButtonModule,
 	MatButtonToggleModule,
 	MatCardModule,
-	MatCheckboxModule,
+	// MatCheckboxModule,
 	MatChipsModule,
 	MatDialogModule,
 	MatExpansionModule,
@@ -38,6 +38,7 @@ import {
 	MatStepperModule,
 	MatFormFieldModule,
 } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
@@ -57,7 +58,6 @@ import { AppRoutes } from './app.routing';
 		MatButtonModule,
 		MatButtonToggleModule,
 		MatCardModule,
-		MatCheckboxModule,
 		MatChipsModule,
 		MatStepperModule,
 		MatDatepickerModule,
@@ -84,6 +84,7 @@ import { AppRoutes } from './app.routing';
 		MatTabsModule,
 		MatToolbarModule,
 		MatTooltipModule,
+		MatCheckboxModule,
 	],
 })
 export class MaterialModule {}
@@ -102,6 +103,7 @@ export class MaterialModule {}
 		FooterModule,
 		FixedpluginModule,
 		MatFormFieldModule,
+		MatCheckboxModule,
 	],
 	declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
 	bootstrap: [AppComponent],
