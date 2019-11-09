@@ -9,23 +9,17 @@ import { PagesRoutes } from './pages.routing';
 
 import { RegisterComponent } from './register/register.component';
 import { PricingComponent } from './pricing/pricing.component';
-import { LockComponent } from './lock/lock.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(PagesRoutes),
-    FormsModule,
-    MaterialModule,
-    ReactiveFormsModule
-  ],
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-    PricingComponent,
-    LockComponent
-  ]
+	imports: [
+		CommonModule,
+		RouterModule.forChild(PagesRoutes),
+		FormsModule,
+		MaterialModule,
+		ReactiveFormsModule,
+	],
+	declarations: [LoginComponent, RegisterComponent, PricingComponent, HomeComponent],
 })
-
 export class PagesModule {}
