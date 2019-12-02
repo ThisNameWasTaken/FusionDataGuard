@@ -7,12 +7,7 @@ import { TimelineComponent } from './timeline.component';
 import { TimelineRoutes } from './timeline.routing';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule.forChild(TimelineRoutes),
-        FormsModule
-    ],
-    declarations: [TimelineComponent]
+  imports: [CommonModule, RouterModule.forChild(TimelineRoutes), FormsModule],
+  declarations: [TimelineComponent],
 })
-
 export class TimelineModule {}
