@@ -1,67 +1,77 @@
 <div class="wrapper wrapper-full-page">
-	<div
-		class="page-header login-page header-filter"
-		filter-color="black"
-		style="background-image: url('./assets/img/login.jpg'); background-size: cover; background-position: top center;"
-	>
-		<!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
-					<form class="form" method="" action="">
-						<div class="card card-login">
-							<div class="card-header card-header-primary text-center">
-								<h4 class="card-title">Log in</h4>
-								<div class="social-line">
-									<a
-										href="#"
-										class="btn btn-just-icon btn-link btn-white"
-										matTooltip="Sign in with Google"
-										[matTooltipPosition]="'below'"
-									>
-										<i aria-hidden="true" class="fa fa-google"></i>
-									</a>
-									<a
-										href="#"
-										class="btn btn-just-icon btn-link btn-white"
-										matTooltip="Sign in with Facebook"
-										[matTooltipPosition]="'below'"
-									>
-										<i aria-hidden="true" class="fa fa-facebook-square"></i>
-									</a>
-									<a
-										href="#"
-										class="btn btn-just-icon btn-link btn-white"
-										matTooltip="Sign in with Twitter"
-										[matTooltipPosition]="'below'"
-									>
-										<i aria-hidden="true" class="fa fa-twitter"></i>
-									</a>
-								</div>
-							</div>
-							<div class="card-body">
-								<p class="card-description text-center">Or the good old way</p>
-								<mat-form-field appearance="outline">
-									<mat-label>Email</mat-label>
-									<input matInput placeholder="someone@example.com" type="email" />
-								</mat-form-field>
-								<mat-form-field appearance="outline">
-									<mat-label>Password</mat-label>
-									<input matInput type="password" />
-									<button matSuffix mat-icon-button aria-label="toggle password visibility">
-										<mat-icon aria-hidden="true">
-											visibility
-										</mat-icon>
-									</button>
-								</mat-form-field>
-							</div>
-							<div class="card-footer justify-content-center">
-								<button mat-raised-button class="btn btn-primary btn-round">Log In</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div
+    class="page-header login-page header-filter"
+    filter-color="black"
+    style="background-image: url('./assets/img/login.jpg'); background-size: cover; background-position: top center;"
+  >
+    <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
+          <form class="form" method="" action="">
+            <div class="card card-login">
+              <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Log in</h4>
+                <div class="social-line">
+                  <a
+                    href="#"
+                    class="btn btn-just-icon btn-link btn-white"
+                    matTooltip="Sign in with Google"
+                    [matTooltipPosition]="'below'"
+                  >
+                    <i aria-hidden="true" class="fa fa-google"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-just-icon btn-link btn-white"
+                    matTooltip="Sign in with Facebook"
+                    [matTooltipPosition]="'below'"
+                  >
+                    <i aria-hidden="true" class="fa fa-facebook-square"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-just-icon btn-link btn-white"
+                    matTooltip="Sign in with Twitter"
+                    [matTooltipPosition]="'below'"
+                  >
+                    <i aria-hidden="true" class="fa fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-description text-center">Or the good old way</p>
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input
+                    matInput
+                    placeholder="someone@example.com"
+                    type="email"
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" />
+                  <button
+                    matSuffix
+                    mat-icon-button
+                    aria-label="toggle password visibility"
+                  >
+                    <mat-icon aria-hidden="true">
+                      visibility
+                    </mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div class="card-footer justify-content-center">
+                <button mat-raised-button class="btn btn-primary btn-round">
+                  Log In
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

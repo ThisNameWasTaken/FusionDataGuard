@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { APP_BASE_HREF } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {
@@ -10,8 +9,9 @@ import {
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
-  // MatCheckboxModule,
+  MatCheckboxModule,
   MatChipsModule,
+  MatDatepickerModule,
   MatDialogModule,
   MatExpansionModule,
   MatGridListModule,
@@ -38,8 +38,6 @@ import {
   MatStepperModule,
   MatFormFieldModule,
 } from '@angular/material';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 

@@ -1,33 +1,38 @@
 <nav
-	class="navbar navbar-expand-lg bg-primary navbar-transparent navbar-absolute"
-	color-on-scroll="500"
+  class="navbar navbar-expand-lg bg-primary navbar-transparent navbar-absolute"
+  color-on-scroll="500"
 >
-	<div class="container">
-		<div class="navbar-wrapper">
-			<a class="navbar-brand d-none d-sm-none d-md-block" routerLink="/">
-				Awesome Streaming App
-			</a>
-		</div>
-		<button mat-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="navbar-toggler-icon icon-bar"></span>
-			<span class="navbar-toggler-icon icon-bar"></span>
-			<span class="navbar-toggler-icon icon-bar"></span>
-		</button>
-		<div class="collapse navbar-collapse justify-content-end">
-			<ul class="navbar-nav">
-				<li class="nav-item" routerLinkActive="active">
-					<a class="nav-link" routerLink="/register">
-						<i class="material-icons">person_add</i> Register
-					</a>
-				</li>
-				<li class="nav-item" routerLinkActive="active">
-					<a class="nav-link" routerLink="/login">
-						<i class="material-icons">how_to_reg</i> Login
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="container">
+    <div class="navbar-wrapper">
+      <a class="navbar-brand d-none d-sm-none d-md-block" routerLink="/">
+        NoConFusion
+      </a>
+    </div>
+    <button
+      mat-button
+      class="navbar-toggler"
+      type="button"
+      (click)="sidebarToggle()"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon icon-bar"></span>
+      <span class="navbar-toggler-icon icon-bar"></span>
+      <span class="navbar-toggler-icon icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/register">
+            <i class="material-icons">person_add</i> Register
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/login">
+            <i class="material-icons">how_to_reg</i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <router-outlet></router-outlet>
