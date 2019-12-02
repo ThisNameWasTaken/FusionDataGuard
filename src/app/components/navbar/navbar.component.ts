@@ -6,7 +6,7 @@ import {
   ElementRef,
   Directive,
 } from '@angular/core';
-import { ROUTES } from '../.././sidebar/sidebar.component';
+import { ROUTES } from '../sidebar/sidebar.component';
 import {
   Router,
   ActivatedRoute,

@@ -41,10 +41,9 @@ import {
 
 import { AppComponent } from './app.component';
 
-import { SidebarModule } from './sidebar/sidebar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule } from './shared/navbar/navbar.module';
-import { FixedpluginModule } from './shared/fixedplugin/fixedplugin.module';
+import { SidebarModule } from './components/sidebar/sidebar.module';
+import { FooterModule } from './components/footer/footer.module';
+import { NavbarModule } from './components/navbar/navbar.module';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
@@ -98,7 +97,6 @@ export class MaterialModule {}
     SidebarModule,
     NavbarModule,
     FooterModule,
-    FixedpluginModule,
     MatFormFieldModule,
     MatCheckboxModule,
   ],
