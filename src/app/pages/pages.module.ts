@@ -13,13 +13,18 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-	imports: [
-		CommonModule,
-		RouterModule.forChild(PagesRoutes),
-		FormsModule,
-		MaterialModule,
-		ReactiveFormsModule,
-	],
-	declarations: [LoginComponent, RegisterComponent, PricingComponent, HomeComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(PagesRoutes),
+    FormsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
+  declarations: [
+    LoginComponent,
+    RegisterComponent,
+    PricingComponent,
+    HomeComponent,
+  ],
 })
 export class PagesModule {}

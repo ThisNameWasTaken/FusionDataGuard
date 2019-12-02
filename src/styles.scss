@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.mat-button-ripple {
+  &.mat-ripple {
+    & > * {
+      background: rgba(#fff, 0.235) !important;
+    }
+  }
+}
