@@ -1,0 +1,203 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "The Fusion DataGuardAPI",
+    "version": "1.0.0",
+    "title": "Fusion DataGuard",
+    "contact": {
+      "name": "API Support",
+      "url": "https://community.fusionfabric.cloud/index.html"
+    }
+  },
+  "x-finastra-category": "Treasury and Capital Markets",
+  "x-finastra-subcategory": "Data Guard",
+  "x-finastra-short-description": "Manage your data",
+  "x-finastra-tags": [
+    "Fusion Summit",
+    "Fusion Invest"
+  ],
+  "x-finastra-channel-type": "B2E",
+  "x-finastra-maturity-level": "BETA",
+  "x-finastra-audience": "PUBLIC",
+  "basePath": "/data-guard",
+  "tags": [
+    {
+      "name": "Alerts",
+      "description": "Endpoints for post-trade event management."
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/alerts": {
+      "get": {
+        "tags": [
+          "Alerts"
+        ],
+        "summary": "Retrieve a list of alerts",
+        "description": "",
+        "operationId": "getAlerts",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The alerts were successfully retrieved",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Alert"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/alerts/trace": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "summary": "Retrieve the impacted portfolios",
+        "description": "",
+        "operationId": "getImpact",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "description": "The name of your alert",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - The portfolios were successfully retrieved",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Folio"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Alert": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "The name of the alert",
+          "example": "EUR/USD"
+        },
+        "Type": {
+          "type": "string",
+          "description": "The type of the alert",
+          "example": "MKD Alert"
+        },
+        "Description": {
+          "type": "string",
+          "description": "The text of the alert",
+          "example": "Spike detected"
+        },
+        "IsOK": {
+          "type": "boolean",
+          "description": "will identify the block as red or green",
+          "default": false
+        },
+        "CreatedTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "the timestamp at which the alert is created"
+        },
+        "Data": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Value"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Folio": {
+      "type": "object",
+      "description": "used to render the table below the plot - impacted folios",
+      "properties": {
+        "Instrument": {
+          "type": "string"
+        },
+        "Entity": {
+          "type": "string"
+        },
+        "Customer": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Quantity": {
+          "type": "string"
+        },
+        "Currency": {
+          "type": "string"
+        },
+        "Last": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Asset Value": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Market Value": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "NAV": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "Balance": {
+          "type": "number",
+          "format": "decimal"
+        },
+        "P&L": {
+          "type": "number",
+          "format": "decimal"
+        }
+      }
+    },
+    "Value": {
+      "description": "the timeseries to be displayed: additional properties can be: last: 1.1; barrier: 1.0, if both barrier and mkd need to be displayed, or just last as mkd",
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": {
+        "type": "number",
+        "format": "decimal"
+      }
+    }
+  }
+}
