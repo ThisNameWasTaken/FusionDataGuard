@@ -4,21 +4,11 @@ import {
   Renderer,
   ViewChild,
   ElementRef,
-  Directive,
 } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
-import {
-  Router,
-  ActivatedRoute,
-  NavigationEnd,
-  NavigationStart,
-} from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import {
-  Location,
-  LocationStrategy,
-  PathLocationStrategy,
-} from '@angular/common';
+import { Location } from '@angular/common';
 const misc: any = {
   navbar_menu_visible: 0,
   active_collapse: true,
@@ -91,7 +81,6 @@ export class NavbarComponent implements OnInit {
     } else {
       setTimeout(function() {
         body.classList.add('hide-sidebar');
-        // $('.sidebar').addClass('animation');
         misc.hide_sidebar_active = true;
       }, 300);
     }
@@ -131,11 +120,9 @@ export class NavbarComponent implements OnInit {
     });
   }
   onResize(event) {
-    if ($(window).width() > 991) {
-      return false;
-    }
-    return true;
+    return window.innerWidth > 991;
   }
+
   sidebarOpen() {
     var $toggle = document.getElementsByClassName('navbar-toggler')[0];
     const toggleButton = this.toggleButton;
@@ -189,7 +176,6 @@ export class NavbarComponent implements OnInit {
 
     this.sidebarVisible = false;
     body.classList.remove('nav-open');
-    // $('html').removeClass('nav-open');
     body.classList.remove('nav-open');
     if ($layer) {
       $layer.remove();
