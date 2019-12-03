@@ -4,7 +4,7 @@ import { Profile } from 'selenium-webdriver/firefox';
 type NavPills = {
   label: string;
   icon: string;
-  active?: boolean;
+  isActive?: boolean;
 };
 
 @Component({
@@ -18,7 +18,7 @@ export class NavPillsComponent {
     {
       label: 'Profile',
       icon: 'person',
-      active: true,
+      isActive: true,
     },
     {
       label: 'Schedule',

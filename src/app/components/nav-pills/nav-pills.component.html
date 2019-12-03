@@ -2,7 +2,7 @@
   <li class="nav-item" *ngFor="let navPill of navPills">
     <a
       class="nav-link"
-      [ngClass]="{ active: isActive }"
+      [ngClass]="{ active: navPill.isActive }"
       data-toggle="tab"
       href="#"
       role="tablist"
