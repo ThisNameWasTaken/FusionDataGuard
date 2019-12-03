@@ -37,6 +37,7 @@ import {
   MatTooltipModule,
   MatStepperModule,
   MatFormFieldModule,
+  MatBadgeModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -81,6 +82,7 @@ import { AppRoutes } from './app.routing';
     MatToolbarModule,
     MatTooltipModule,
     MatCheckboxModule,
+    MatBadgeModule,
   ],
   declarations: [],
 })
