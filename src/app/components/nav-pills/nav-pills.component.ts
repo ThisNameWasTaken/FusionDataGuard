@@ -21,7 +21,7 @@ export class NavPillsComponent {
       isActive: true,
     },
     {
-      label: '1 Monitoring',
+      label: 'Barrier Monitoring',
       icon: 'schedule',
     },
     {
@@ -29,7 +29,7 @@ export class NavPillsComponent {
       icon: 'schedule',
     },
     {
-      label: '2 Monitoring',
+      label: 'Portfolio Monitoring',
       icon: 'settings',
     },
   ];
