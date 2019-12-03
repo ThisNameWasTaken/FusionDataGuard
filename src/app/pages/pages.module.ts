@@ -14,6 +14,8 @@ import { ChartComponent } from '../components/chart/chart.component';
 import { NavPillsComponent } from '../components/nav-pills/nav-pills.component';
 import { NavPillComponent } from '../components/nav-pill/nav-pill.component';
 import { DataTableComponent } from '../components/data-table/data-table.component';
+import { QueryBuilderComponent } from '../components/query-builder/query-builder.component';
+import { QueryBuilderModule } from 'angular2-query-builder';
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ import { DataTableComponent } from '../components/data-table/data-table.componen
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
+    QueryBuilderModule,
   ],
   declarations: [
     ChartComponent,
@@ -32,6 +35,7 @@ import { DataTableComponent } from '../components/data-table/data-table.componen
     NavPillsComponent,
     NavPillComponent,
     DataTableComponent,
+    QueryBuilderComponent,
   ],
 })
 export class PagesModule {}

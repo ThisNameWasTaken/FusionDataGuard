@@ -1,8 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-.mat-button-ripple {
-  &.mat-ripple {
-    & > * {
-      background: rgba(#fff, 0.235) !important;
+.mat-raised-button {
+  .mat-button-ripple {
+    &.mat-ripple {
+      & > * {
+        background: rgba(#fff, 0.235) !important;
+      }
     }
   }
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: rgba(#ab47bc, 0.12) !important;
+
+  &.mat-ripple {
+    & > * {
+      background: rgba(#ab47bc, 0.235) !important;
+    }
+  }
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: rgba(#000, 0.87) !important;
 }

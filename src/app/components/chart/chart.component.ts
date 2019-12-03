@@ -16,6 +16,9 @@ export class ChartComponent implements OnInit {
   @Input('baseline')
   baseLine: number;
 
+  @Input('labels')
+  labels: string[];
+
   constructor() {}
 
   ngOnInit() {
@@ -54,15 +57,7 @@ export class ChartComponent implements OnInit {
     new Chart(this.canvasRef.nativeElement, {
       type: 'line',
       data: {
-        labels: [
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday',
-          'Sunday',
-        ],
+        labels: this.labels,
         // @ts-ignore
         datasets,
       },
