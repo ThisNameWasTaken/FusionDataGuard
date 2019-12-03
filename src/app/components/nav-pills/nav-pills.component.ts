@@ -42,8 +42,6 @@ export class NavPillsComponent {
   onClick(event: Event, navPillIndex: number) {
     event.preventDefault();
 
-    console.log(event, navPillIndex);
-
     this.navPills[navPillIndex].isActive = true;
     this.navPills[this.lastActiveNavPillIndex].isActive = false;
 
