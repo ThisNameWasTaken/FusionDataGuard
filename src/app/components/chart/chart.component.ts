@@ -39,6 +39,15 @@ export class ChartComponent implements OnInit {
             borderColor: '#e91e63',
             borderWidth: 1,
           },
+          {
+            label: 'baseline',
+            data: [7, 7, 7, 7, 7, 7, 7],
+            backgroundColor: 'transparent',
+            borderColor: '#46f',
+            pointRadius: 0,
+            pointHitRadius: 0,
+            borderWidth: 1,
+          },
         ],
       },
       options: {

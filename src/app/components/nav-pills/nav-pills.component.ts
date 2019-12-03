@@ -16,16 +16,20 @@ export class NavPillsComponent {
   @Input('navPills')
   navPills: NavPill[] = [
     {
-      label: 'Profile',
+      label: 'MKD Alerts',
       icon: 'person',
       isActive: true,
     },
     {
-      label: 'Schedule',
+      label: '1 Monitoring',
       icon: 'schedule',
     },
     {
-      label: 'Settings',
+      label: 'Static Data',
+      icon: 'schedule',
+    },
+    {
+      label: '2 Monitoring',
       icon: 'settings',
     },
   ];
