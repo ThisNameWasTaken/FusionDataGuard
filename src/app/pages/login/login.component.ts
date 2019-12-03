@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
+import { AuthService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login-cmp',
@@ -10,23 +11,26 @@ export class LoginComponent implements OnInit, OnDestroy {
   private sidebarVisible: boolean;
   private nativeElement: Node;
 
-  constructor(private element: ElementRef) {
+  constructor(private element: ElementRef, private authService: AuthService) {
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
   }
 
   ngOnInit() {
-    var navbar: HTMLElement = this.element.nativeElement;
+    const navbar = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
-    const body = document.getElementsByTagName('body')[0];
-    body.classList.add('login-page');
-    body.classList.add('off-canvas-sidebar');
+
+    document.body.classList.add('login-page');
+    document.body.classList.add('off-canvas-sidebar');
+
     const card = document.getElementsByClassName('card')[0];
+
     setTimeout(function() {
       // after 1000 ms we add the class animated to the login/register card
       card.classList.remove('card-hidden');
     }, 700);
   }
+
   sidebarToggle() {
     var toggleButton = this.toggleButton;
     var body = document.getElementsByTagName('body')[0];
@@ -43,9 +47,14 @@ export class LoginComponent implements OnInit, OnDestroy {
       body.classList.remove('nav-open');
     }
   }
+
   ngOnDestroy() {
-    const body = document.getElementsByTagName('body')[0];
-    body.classList.remove('login-page');
-    body.classList.remove('off-canvas-sidebar');
+    document.body.classList.remove('login-page');
+    document.body.classList.remove('off-canvas-sidebar');
+  }
+
+  onLogIn() {
+    console.log('login ...');
+    this.authService.login('lorem', 'ipsum');
   }
 }

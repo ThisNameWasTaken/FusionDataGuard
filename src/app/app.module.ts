@@ -82,6 +82,7 @@ import { AppRoutes } from './app.routing';
     MatTooltipModule,
     MatCheckboxModule,
   ],
+  declarations: [],
 })
 export class MaterialModule {}
 

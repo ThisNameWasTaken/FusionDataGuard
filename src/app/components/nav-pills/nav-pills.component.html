@@ -1,0 +1,14 @@
+<ul class="nav nav-pills nav-pills-icons nav-pills-rose" role="tablist">
+  <li class="nav-item" *ngFor="let navPill of navPills">
+    <a
+      class="nav-link"
+      [ngClass]="{ active: isActive }"
+      data-toggle="tab"
+      href="#"
+      role="tablist"
+    >
+      <i class="material-icons">{{ navPill.icon }}</i>
+      <span>{{ navPill.label }}</span>
+    </a>
+  </li>
+</ul>

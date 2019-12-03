@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LockComponent } from './lock/lock.component';
 import { ChartComponent } from '../components/chart/chart.component';
+import { NavPillsComponent } from '../components/nav-pills/nav-pills.component';
+import { NavPillComponent } from '../components/nav-pill/nav-pill.component';
 
 @NgModule({
   imports: [
@@ -26,6 +28,8 @@ import { ChartComponent } from '../components/chart/chart.component';
     RegisterComponent,
     LockComponent,
     HomeComponent,
+    NavPillsComponent,
+    NavPillComponent,
   ],
 })
 export class PagesModule {}

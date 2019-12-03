@@ -12,9 +12,12 @@ export class AuthLayoutComponent implements OnInit {
   mobile_menu_visible: any = 0;
   private _router: Subscription;
 
+  isLoggedIn = true;
+
   constructor(private router: Router, private element: ElementRef) {
     this.sidebarVisible = false;
   }
+
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
 
@@ -31,7 +34,8 @@ export class AuthLayoutComponent implements OnInit {
   }
   sidebarOpen() {
     var $toggle = document.getElementsByClassName('navbar-toggler')[0];
-    const toggleButton = this.toggleButton;
+    const toggleButton =
+      this.toggleButton || document.getElementsByClassName('navbar-toggler')[0];
     const body = document.getElementsByTagName('body')[0];
     setTimeout(function() {
       toggleButton.classList.add('toggled');
