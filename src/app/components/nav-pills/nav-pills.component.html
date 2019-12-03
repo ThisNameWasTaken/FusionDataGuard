@@ -13,3 +13,14 @@
     </a>
   </li>
 </ul>
+<div class="tab-content tab-space">
+  <ng-container *ngIf="navPills[0].isActive">
+    <app-chart></app-chart>
+  </ng-container>
+  <ng-container *ngIf="navPills[1].isActive">
+    <h2>second tab</h2>
+  </ng-container>
+  <ng-container *ngIf="navPills[2].isActive">
+    <app-chart></app-chart>
+  </ng-container>
+</div>
