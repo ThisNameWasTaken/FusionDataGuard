@@ -13,6 +13,7 @@ import { LockComponent } from './lock/lock.component';
 import { ChartComponent } from '../components/chart/chart.component';
 import { NavPillsComponent } from '../components/nav-pills/nav-pills.component';
 import { NavPillComponent } from '../components/nav-pill/nav-pill.component';
+import { DataTableComponent } from '../components/data-table/data-table.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { NavPillComponent } from '../components/nav-pill/nav-pill.component';
     HomeComponent,
     NavPillsComponent,
     NavPillComponent,
+    DataTableComponent,
   ],
 })
 export class PagesModule {}
