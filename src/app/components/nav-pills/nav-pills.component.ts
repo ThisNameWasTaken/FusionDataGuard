@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Profile } from 'selenium-webdriver/firefox';
 
-type NavPills = {
+type NavPill = {
   label: string;
   icon: string;
   isActive?: boolean;
@@ -14,7 +14,7 @@ type NavPills = {
 })
 export class NavPillsComponent {
   @Input('navPills')
-  navPills: NavPills[] = [
+  navPills: NavPill[] = [
     {
       label: 'Profile',
       icon: 'person',
@@ -30,5 +30,19 @@ export class NavPillsComponent {
     },
   ];
 
+  private lastActiveNavPillIndex =
+    this.navPills.findIndex(({ isActive }) => isActive) || 0;
+
   constructor() {}
+
+  onClick(event: Event, navPillIndex: number) {
+    event.preventDefault();
+
+    console.log(event, navPillIndex);
+
+    this.navPills[navPillIndex].isActive = true;
+    this.navPills[this.lastActiveNavPillIndex].isActive = false;
+
+    this.lastActiveNavPillIndex = navPillIndex;
+  }
 }
