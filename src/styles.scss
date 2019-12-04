@@ -81,8 +81,21 @@ mat-bottom-sheet-container.mat-bottom-sheet-container {
 }
 
 [color='success'] {
+  [disabled] & {
+    .mat-badge-content {
+      background: #ccff90 !important;
+    }
+  }
+
   .mat-badge-content {
-    background: #00e676 !important;
+    background: #76ff03 !important;
     color: rgba(#000, 0.87);
+  }
+}
+
+mat-accordion[displayMode='flat'] {
+  mat-expansion-panel {
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(#000, 0.12);
   }
 }

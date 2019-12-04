@@ -39,6 +39,7 @@ import {
   MatFormFieldModule,
   MatBadgeModule,
   MatBottomSheetModule,
+  MatTreeModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -86,6 +87,7 @@ import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.com
     MatCheckboxModule,
     MatBadgeModule,
     MatBottomSheetModule,
+    MatTreeModule,
   ],
   declarations: [BottomSheetComponent],
   entryComponents: [BottomSheetComponent],
