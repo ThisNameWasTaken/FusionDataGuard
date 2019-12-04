@@ -16,6 +16,7 @@ import { NavPillComponent } from '../components/nav-pill/nav-pill.component';
 import { DataTableComponent } from '../components/data-table/data-table.component';
 import { QueryBuilderComponent } from '../components/query-builder/query-builder.component';
 import { QueryBuilderModule } from 'angular2-query-builder';
+import { AccordionComponent } from '../components/accordion/accordion.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { QueryBuilderModule } from 'angular2-query-builder';
     NavPillComponent,
     DataTableComponent,
     QueryBuilderComponent,
+    AccordionComponent,
   ],
 })
 export class PagesModule {}
