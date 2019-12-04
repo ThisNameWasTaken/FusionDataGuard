@@ -13,6 +13,7 @@
               <small class="description">Horizontal Tabs</small>
             </h4>
           </div>
+
           <div class="card-body ">
             <ng-container *ngIf="false">
               <app-nav-pills></app-nav-pills>
@@ -28,4 +29,12 @@
       </div>
     </div>
   </div>
+</div>
+
+<div style="position: fixed; bottom: 32px; right: 24px; z-index: 9;">
+  <button mat-fab color="primary" (click)="openBottomSheet()">
+    <mat-icon>
+      edit
+    </mat-icon>
+  </button>
 </div>
