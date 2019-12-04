@@ -1,5 +1,26 @@
 import { Injectable } from '@angular/core';
 
+const mockedTableData = [
+  {
+    entity: 'FundA',
+    instrument: 'EUR/USD',
+    'asset value': 10079,
+    'market value': 1079.1,
+    currency: 'EUR',
+    nav: 1078.2,
+    balance: 5002.3,
+  },
+  {
+    entity: 'FundB',
+    instrument: 'EUR/USD OPT',
+    'asset value': 5283.321,
+    'market value': 502.7,
+    currency: 'EUR',
+    nav: 5281.12,
+    balance: 5011.2,
+  },
+];
+
 const mockedData = {
   items: [
     {
