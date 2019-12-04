@@ -1,4 +1,9 @@
-<query-builder [(ngModel)]="query" [config]="config">
+<query-builder
+  [(ngModel)]="query"
+  [config]="currentConfig"
+  [allowRuleset]="allowRuleset"
+  [allowCollapse]="allowCollapse"
+>
   <ng-container
     *queryButtonGroup="
       let ruleset;
@@ -38,6 +43,7 @@
       mat-icon-button
       color="accent"
       (click)="removeRule(rule)"
+      style="z-index: 999;"
     >
       <mat-icon>remove</mat-icon>
     </button>
