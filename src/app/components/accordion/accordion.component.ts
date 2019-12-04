@@ -13,6 +13,8 @@ export class AccordionComponent implements OnInit {
     labels: string[];
   };
 
+  mkdData;
+
   constructor(private guardService: GuardService) {}
 
   ngOnInit() {
@@ -20,5 +22,8 @@ export class AccordionComponent implements OnInit {
     document.body.classList.add('off-canvas-sidebar');
 
     this.staticData = this.guardService.getStaticData();
+    this.mkdData = this.guardService.getMarketDataAlerts();
+
+    console.log(this.mkdData);
   }
 }

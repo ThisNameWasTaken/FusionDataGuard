@@ -72,6 +72,94 @@ const mockedData = {
   ],
 };
 
+const mockedDataMKD = {
+  items: [
+    {
+      Name: 'USD/CNY',
+      Type: 'MKD',
+      Description: 'Barrier breached',
+      IsOK: false,
+      CreatedTime: '2019-12-05T12:27:40.138Z',
+      Data: {
+        items: [
+          {
+            date: '2019-11-27',
+            last: 7,
+          },
+          {
+            date: '2019-11-28',
+            last: 7.1,
+          },
+          {
+            date: '2019-11-29',
+            last: 7.2,
+          },
+          {
+            date: '2019-12-02',
+            last: 7.1,
+          },
+          {
+            date: '2019-12-03',
+            last: 7.15,
+          },
+          {
+            date: '2019-12-04',
+            last: 7.25,
+          },
+          {
+            date: '2019-12-05',
+            last: 720,
+          },
+        ],
+      },
+    },
+  ],
+};
+
+const mockedDataMAD = {
+  items: [
+    {
+      Name: 'USD/CNY',
+      Type: 'MKD',
+      Description: 'Barrier breached',
+      IsOK: false,
+      CreatedTime: '2019-12-05T12:27:40.138Z',
+      Data: {
+        items: [
+          {
+            date: '2019-11-27',
+            last: 7,
+          },
+          {
+            date: '2019-11-28',
+            last: 7.1,
+          },
+          {
+            date: '2019-11-29',
+            last: 7.2,
+          },
+          {
+            date: '2019-12-02',
+            last: 7.1,
+          },
+          {
+            date: '2019-12-03',
+            last: 7.15,
+          },
+          {
+            date: '2019-12-04',
+            last: 7.25,
+          },
+          {
+            date: '2019-12-05',
+            last: 720,
+          },
+        ],
+      },
+    },
+  ],
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -81,6 +169,13 @@ export class GuardService {
       points: mockedData.items[0].Data.items.map(({ last }) => last),
       baseline: mockedData.items[0].Data.items[0].barrier,
       labels: mockedData.items[0].Data.items.map(({ date }) => date),
+    };
+  }
+
+  getMarketDataAlerts() {
+    return {
+      points: mockedDataMKD.items[0].Data.items.map(({ last }) => last),
+      labels: mockedDataMKD.items[0].Data.items.map(({ date }) => date),
     };
   }
 }

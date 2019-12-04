@@ -13,14 +13,13 @@
         <mat-expansion-panel-header>
           <mat-panel-title>
             <span>
-              Alert 1
+              USD/CNY Spike Detected
             </span>
           </mat-panel-title>
         </mat-expansion-panel-header>
         <app-chart
-          [points]="staticData.points"
-          [baseline]="staticData.baseline"
-          [labels]="staticData.labels"
+          [points]="mkdData.points"
+          [labels]="mkdData.labels"
         ></app-chart>
       </mat-expansion-panel>
 
@@ -28,15 +27,15 @@
         <mat-expansion-panel-header>
           <mat-panel-title>
             <span>
-              Alert 2
+              EUR/GBP Missing Price 2019-12-05
             </span>
+            <!-- TODO: Add table; remove 6th column -->
           </mat-panel-title>
         </mat-expansion-panel-header>
 
         <app-chart
-          [points]="staticData.points"
-          [baseline]="staticData.baseline"
-          [labels]="staticData.labels"
+          [points]="mkdData.points"
+          [labels]="mkdData.labels"
         ></app-chart>
       </mat-expansion-panel>
     </mat-accordion>
@@ -56,22 +55,20 @@
         <mat-expansion-panel-header>
           <mat-panel-title>
             <span>
-              Alert 1
+              CUST1 Swift code missing; LEI missing
             </span>
           </mat-panel-title>
         </mat-expansion-panel-header>
-        Alert 1 content
       </mat-expansion-panel>
 
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
             <span>
-              Alert 2
+              Instrument1 ISIN malformed: US00040262
             </span>
           </mat-panel-title>
         </mat-expansion-panel-header>
-        Alert 2 content
       </mat-expansion-panel>
     </mat-accordion>
   </mat-expansion-panel>
@@ -140,11 +137,12 @@
         <mat-expansion-panel-header>
           <mat-panel-title>
             <span>
-              Alert 1
+              Position P&L exceeds tolerance 10%
             </span>
+            <!-- TODO: Add a graph with 7 datapoints  -->
+            <!-- TODO: Add a table with two folios  -->
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Portfolio Monitoring content</p>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-expansion-panel>
