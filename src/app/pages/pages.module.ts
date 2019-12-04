@@ -11,8 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LockComponent } from './lock/lock.component';
 import { ChartComponent } from '../components/chart/chart.component';
-import { NavPillsComponent } from '../components/nav-pills/nav-pills.component';
-import { NavPillComponent } from '../components/nav-pill/nav-pill.component';
 import { DataTableComponent } from '../components/data-table/data-table.component';
 import { QueryBuilderComponent } from '../components/query-builder/query-builder.component';
 import { QueryBuilderModule } from 'angular2-query-builder';
@@ -33,8 +31,6 @@ import { AccordionComponent } from '../components/accordion/accordion.component'
     RegisterComponent,
     LockComponent,
     HomeComponent,
-    NavPillsComponent,
-    NavPillComponent,
     DataTableComponent,
     QueryBuilderComponent,
     AccordionComponent,
