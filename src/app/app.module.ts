@@ -51,6 +51,8 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { QueryBuilderModule } from 'angular2-query-builder';
+import { QueryBuilderComponent } from './components/query-builder/query-builder.component';
 
 @NgModule({
   exports: [
@@ -88,9 +90,8 @@ import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.com
     MatBadgeModule,
     MatBottomSheetModule,
     MatTreeModule,
+    QueryBuilderModule,
   ],
-  declarations: [BottomSheetComponent],
-  entryComponents: [BottomSheetComponent],
 })
 export class MaterialModule {}
 
@@ -109,7 +110,8 @@ export class MaterialModule {}
     MatFormFieldModule,
     MatCheckboxModule,
   ],
-  declarations: [AppComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AuthLayoutComponent, BottomSheetComponent],
+  entryComponents: [BottomSheetComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

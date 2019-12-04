@@ -1,3 +1,11 @@
-.container {
+.query-builder-container {
   height: calc(100vh - 64px);
+}
+
+.query-remove-button {
+  z-index: 1;
+}
+
+.narrow {
+  flex-grow: unset !important;
 }
