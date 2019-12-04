@@ -7,7 +7,7 @@ import { QueryBuilderConfig } from 'angular2-query-builder';
 @Component({
   selector: 'app-query-builder',
   templateUrl: './query-builder.component.html',
-  styleUrls: ['./query-builder.component.css'],
+  styleUrls: ['./query-builder.component.scss'],
 })
 export class QueryBuilderComponent {
   public queryCtrl: FormControl;
@@ -125,7 +125,7 @@ export class QueryBuilderComponent {
 
   public currentConfig: QueryBuilderConfig;
   public allowRuleset: boolean = true;
-  public allowCollapse: boolean;
+  public allowCollapse: boolean = true;
   public persistValueOnFieldChange: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {

@@ -43,7 +43,7 @@
       mat-icon-button
       color="accent"
       (click)="removeRule(rule)"
-      style="z-index: 999;"
+      class="query-remove-button"
     >
       <mat-icon>remove</mat-icon>
     </button>
@@ -54,16 +54,16 @@
       [(ngModel)]="ruleset.condition"
       (ngModelChange)="onChange($event)"
     >
-      <mat-radio-button [style.padding.px]="10" value="and"
-        >And</mat-radio-button
-      >
-      <mat-radio-button [style.padding.px]="10" value="or">Or</mat-radio-button>
+      <mat-radio-button class="pl-3 pr-2 pt-2" value="and">
+        And
+      </mat-radio-button>
+      <mat-radio-button class="pl-2 pr-3 pt-2" value="or">Or</mat-radio-button>
     </mat-radio-group>
   </ng-container>
   <ng-container
     *queryEntity="let rule; let entities = entities; let onChange = onChange"
   >
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-select
         [(ngModel)]="rule.entity"
         (ngModelChange)="onChange($event, rule)"
@@ -82,7 +82,7 @@
       let getFields = getFields
     "
   >
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-select
         [(ngModel)]="rule.field"
         (ngModelChange)="onChange($event, rule)"
@@ -103,7 +103,7 @@
       let onChange = onChange
     "
   >
-    <mat-form-field [style.width.px]="90">
+    <mat-form-field appearance="outline" class="narrow" [style.width.px]="90">
       <mat-select [(ngModel)]="rule.operator" (ngModelChange)="onChange(rule)">
         <mat-option *ngFor="let value of operators" [value]="value">
           {{ value }}
@@ -128,7 +128,7 @@
       let onChange = onChange
     "
   >
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-select [(ngModel)]="rule.value" (ngModelChange)="onChange()">
         <mat-option *ngFor="let opt of options" [value]="opt.value">
           {{ opt.name }}
@@ -137,7 +137,7 @@
     </mat-form-field>
   </ng-container>
   <ng-container *queryInput="let rule; type: 'date'; let onChange = onChange">
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <input
         matInput
         [matDatepicker]="picker"
@@ -156,7 +156,7 @@
       let onChange = onChange
     "
   >
-    <mat-form-field [style.width.px]="300">
+    <mat-form-field appearance="outline" class="narrow" [style.width.px]="300">
       <mat-select
         [(ngModel)]="rule.value"
         multiple
@@ -176,7 +176,7 @@
       let onChange = onChange
     "
   >
-    <mat-form-field [style.width.px]="50">
+    <mat-form-field appearance="outline" [style.width.px]="50">
       <input
         matInput
         [(ngModel)]="rule.value"
@@ -193,7 +193,7 @@
       let onChange = onChange
     "
   >
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <input matInput [(ngModel)]="rule.value" (ngModelChange)="onChange()" />
     </mat-form-field>
   </ng-container>
@@ -205,9 +205,8 @@
       let onChange = onChange
     "
   >
-    <mat-form-field>
-      <textarea matInput [(ngModel)]="rule.value" (ngModelChange)="onChange()">
-      </textarea>
+    <mat-form-field appearance="outline">
+      <input matInput [(ngModel)]="rule.value" (ngModelChange)="onChange()" />
     </mat-form-field>
   </ng-container>
 </query-builder>

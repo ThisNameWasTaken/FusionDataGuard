@@ -10,15 +10,44 @@
 }
 
 .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
-  background: rgba(#ab47bc, 0.12) !important;
+  background: rgba(#ab47bc, 0.235) !important;
+}
 
-  &.mat-ripple {
+.mat-option {
+  &:hover {
+    background: rgba(#ab47bc, 0.12) !important;
+  }
+
+  .mat-option-ripple {
     & > * {
-      background: rgba(#ab47bc, 0.235) !important;
+      background: rgba(#ab47bc, 0.12) !important;
     }
   }
 }
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
   color: rgba(#000, 0.87) !important;
+}
+
+.mat-form-field-infix {
+  border-top: 0.5rem solid transparent !important;
+}
+
+.q-row {
+  display: flex;
+
+  mat-form-field.mat-form-field {
+    width: auto;
+    flex-grow: 1;
+    display: inline-block;
+  }
+
+  mat-form-field {
+    min-width: 48px;
+  }
+
+  .q-button-group.q-right-align {
+    order: 5;
+    flex-grow: auto;
+  }
 }
