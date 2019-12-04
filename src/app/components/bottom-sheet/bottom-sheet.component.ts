@@ -18,8 +18,8 @@ export class BottomSheetComponent implements OnInit {
       {
         field: 'birthday',
         operator: '=',
-        value: new Date(),
         entity: 'nonphysical',
+        value: new Date(),
       },
       {
         condition: 'or',
@@ -139,7 +139,7 @@ export class BottomSheetComponent implements OnInit {
     // TODO: Unsubscribe
     this._bottomSheetRef.afterDismissed().subscribe(() => {
       // @ts-ignore
-      window.query = this.currentConfig;
+      window.query = this.query;
     });
   }
 
