@@ -7,6 +7,8 @@ import { BottomSheetComponent } from 'src/app/components/bottom-sheet/bottom-she
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  isBottomSheetOpen = false;
+
   constructor(private bottomSheet: MatBottomSheet) {}
 
   ngOnInit() {
@@ -19,7 +21,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     document.body.classList.remove('off-canvas-sidebar');
   }
 
-  showBottomSheet() {
-    this.bottomSheet.open(BottomSheetComponent);
+  toggleBottomSheet() {
+    this.isBottomSheetOpen = !this.isBottomSheetOpen;
+
+    this.isBottomSheetOpen
+      ? this.bottomSheet.open(BottomSheetComponent)
+      : this.bottomSheet.dismiss();
   }
 }

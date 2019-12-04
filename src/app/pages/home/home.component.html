@@ -31,8 +31,16 @@
 </div>
 
 <div style="position: fixed; bottom: 32px; right: 24px; z-index: 9999999;">
-  <button mat-fab color="primary" (click)="showBottomSheet()">
-    <mat-icon>
+  <button
+    mat-fab
+    color="primary"
+    (click)="toggleBottomSheet()"
+    [ngClass]="{ 'mat-fab--on': isBottomSheetOpen }"
+  >
+    <mat-icon class="mat-icon--on">
+      save
+    </mat-icon>
+    <mat-icon class="mat-icon--off">
       edit
     </mat-icon>
   </button>

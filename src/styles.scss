@@ -99,3 +99,51 @@ mat-accordion[displayMode='flat'] {
     border-bottom: 1px solid rgba(#000, 0.12);
   }
 }
+
+.mat-fab {
+  $icon-size: 32px;
+
+  & .mat-icon {
+    transition: transform 0.3s ease-out, opacity 0.15s ease-in 0.05s;
+
+    &--on {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    &--off {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+
+  &--on {
+    & .mat-icon {
+      &--on {
+        transform: rotate(0deg);
+        opacity: 1;
+      }
+
+      &--off {
+        transform: rotate(90deg);
+        opacity: 0;
+      }
+    }
+  }
+
+  & > .mat-button-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    & > .mat-icon {
+      position: absolute;
+      top: calc(50% - #{$icon-size / 2});
+      left: calc(50% - #{$icon-size / 2});
+      display: block;
+      font-size: $icon-size;
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+}
