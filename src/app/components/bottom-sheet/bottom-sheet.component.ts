@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { QueryBuilderConfig } from 'angular2-query-builder';
+import { MatBottomSheetRef } from '@angular/material';
 
 @Component({
   selector: 'app-bottom-sheet',
   templateUrl: './bottom-sheet.component.html',
   styleUrls: ['./bottom-sheet.component.scss'],
 })
-export class BottomSheetComponent {
+export class BottomSheetComponent implements OnInit {
   public queryCtrl: FormControl;
 
   public query = {
@@ -126,9 +127,20 @@ export class BottomSheetComponent {
   public allowCollapse: boolean = true;
   public persistValueOnFieldChange: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private _bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>
+  ) {
     this.queryCtrl = this.formBuilder.control(this.query);
     this.currentConfig = this.config;
+  }
+
+  ngOnInit() {
+    // TODO: Unsubscribe
+    this._bottomSheetRef.afterDismissed().subscribe(() => {
+      // @ts-ignore
+      window.query = this.currentConfig;
+    });
   }
 
   switchModes(event: Event) {

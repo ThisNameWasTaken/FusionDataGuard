@@ -25,7 +25,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.isBottomSheetOpen = !this.isBottomSheetOpen;
 
     this.isBottomSheetOpen
-      ? this.bottomSheet.open(BottomSheetComponent)
+      ? // TODO: Unsubscribe
+        this.bottomSheet
+          .open(BottomSheetComponent)
+          .afterDismissed()
+          .subscribe(() => {
+            // @ts-ignore
+            console.log(window.query);
+          })
       : this.bottomSheet.dismiss();
   }
 }
