@@ -30,7 +30,7 @@ export class ChartComponent implements OnInit {
 
     const datasets: any[] = [
       {
-        label: '# count',
+        label: 'last',
         data: this.points,
         backgroundColor: gradient,
         borderColor: '#e91e63',
@@ -42,7 +42,7 @@ export class ChartComponent implements OnInit {
 
     if (this.baseLine) {
       datasets.push({
-        label: 'baseline',
+        label: 'barrier',
         data: this.points.map(point => this.baseLine),
         backgroundColor: 'transparent',
         borderColor: '#46f',

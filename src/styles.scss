@@ -1,3 +1,5 @@
+// @import 'bootstrap/scss/mixins.scss';
+
 /* You can add global styles to this file, and also import other style files */
 .mat-raised-button {
   .mat-button-ripple {
@@ -71,3 +73,8 @@ mat-expansion-panel-header {
     }
   }
 }
+
+// .mat-bottom-sheet-container {
+//   @include make-container();
+//   @include make-container-max-widths();
+// }

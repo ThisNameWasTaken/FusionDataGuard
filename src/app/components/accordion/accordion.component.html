@@ -1,30 +1,90 @@
 <mat-accordion multi>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <span matBadge="2" matBadgeOverlap="false">
-          MKD Alerts
-        </span>
-      </mat-panel-title>
-      <!-- <mat-panel-description>
-          Type your name and age
-        </mat-panel-description> -->
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Barrier Monitoring
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Barrier Monitoring content</p>
-  </mat-expansion-panel>
-
   <mat-expansion-panel expanded>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Static Data
+        <span matBadge="2" matBadgeOverlap="false">
+          Market Data Alerts
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <app-chart
+      [points]="staticData.points"
+      [baseline]="staticData.baseline"
+      [labels]="staticData.labels"
+    ></app-chart>
+
+    <app-data-table
+      [header]="['position', 'name', 'weight', 'symbol']"
+      [data]="[
+        {
+          position: 1,
+          name: 'Hydrogen',
+          weight: 1.0079,
+          symbol: 'H'
+        },
+        {
+          position: 2,
+          name: 'Helium',
+          weight: 4.0026,
+          symbol: 'He'
+        },
+        {
+          position: 3,
+          name: 'Lithium',
+          weight: 6.941,
+          symbol: 'Li'
+        },
+        {
+          position: 4,
+          name: 'Beryllium',
+          weight: 9.0122,
+          symbol: 'Be'
+        },
+        {
+          position: 5,
+          name: 'Boron',
+          weight: 10.811,
+          symbol: 'B'
+        },
+        {
+          position: 6,
+          name: 'Carbon',
+          weight: 12.0107,
+          symbol: 'C'
+        },
+        {
+          position: 7,
+          name: 'Nitrogen',
+          weight: 14.0067,
+          symbol: 'N'
+        }
+      ]"
+    ></app-data-table>
+
+    <app-chart
+      [points]="staticData.points"
+      [baseline]="staticData.baseline"
+      [labels]="staticData.labels"
+    ></app-chart>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span matBadge="2" matBadgeOverlap="false" color="success">
+          Static Data Alerts
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span matBadge="1" matBadgeOverlap="false">
+          Barrier Monitoring
+        </span>
       </mat-panel-title>
     </mat-expansion-panel-header>
     <app-chart
@@ -84,7 +144,31 @@
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Portfolio Monitoring
+        <span matBadge="1" matBadgeOverlap="false" color="success">
+          Position Monitoring
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Portfolio Monitoring content</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span matBadge="0" matBadgeOverlap="false" color="success">
+          Compliance Breaches
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Portfolio Monitoring content</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span matBadge="0" matBadgeOverlap="false" color="success">
+          Customers (KYC) Alerts
+        </span>
       </mat-panel-title>
     </mat-expansion-panel-header>
     <p>Portfolio Monitoring content</p>
