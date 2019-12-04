@@ -79,3 +79,10 @@ mat-bottom-sheet-container.mat-bottom-sheet-container {
   width: calc(100vw - 54px) !important;
   max-height: calc(100vh) !important;
 }
+
+[color='success'] {
+  .mat-badge-content {
+    background: #00e676 !important;
+    color: rgba(#000, 0.87);
+  }
+}
