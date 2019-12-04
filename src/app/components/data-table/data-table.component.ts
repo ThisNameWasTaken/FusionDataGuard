@@ -12,6 +12,7 @@ export class DataTableComponent implements OnInit {
   dataSource: [];
 
   ngOnInit() {
+    // @ts-ignore
     this.displayedColumns = Object.keys(this.dataSource[0]);
   }
 }
