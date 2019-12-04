@@ -51,3 +51,23 @@
     flex-grow: auto;
   }
 }
+
+mat-expansion-panel-header {
+  height: 54px !important;
+
+  .mat-content {
+    overflow: visible;
+  }
+
+  .mat-badge-medium.mat-badge-above {
+    .mat-badge-content {
+      top: -6px;
+    }
+  }
+
+  .mat-badge-medium.mat-badge-after {
+    .mat-badge-content {
+      right: -24px;
+    }
+  }
+}
