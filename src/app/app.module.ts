@@ -38,6 +38,7 @@ import {
   MatStepperModule,
   MatFormFieldModule,
   MatBadgeModule,
+  MatBottomSheetModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -48,6 +49,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   exports: [
@@ -83,8 +85,10 @@ import { AppRoutes } from './app.routing';
     MatTooltipModule,
     MatCheckboxModule,
     MatBadgeModule,
+    MatBottomSheetModule,
   ],
-  declarations: [],
+  declarations: [BottomSheetComponent],
+  entryComponents: [BottomSheetComponent],
 })
 export class MaterialModule {}
 
