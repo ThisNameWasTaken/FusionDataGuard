@@ -14,6 +14,4 @@ npm run build
 
 ## Build for OpenFin
 
-```
-npm run build:openfin
-```
+Run `npm run server` and then `npm run build:openfin`
