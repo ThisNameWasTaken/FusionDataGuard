@@ -21,7 +21,7 @@ export class SpeechService {
       const message: string = event.results[0][0].transcript;
       console.log(message);
 
-      if (message.toLowerCase().includes('market data')) {
+      if (message.toLowerCase().includes('market')) {
         this.read(' USD/CNY Spike Detected on 12th of December 2019');
       }
     };

@@ -19,9 +19,15 @@ export class ChartComponent implements OnInit {
   @Input('labels')
   labels: string[];
 
+  @Input('label')
+  label: string;
+
   constructor() {}
 
   ngOnInit() {
+    console.log(this.label);
+    this.label = this.label || 'last';
+
     const gradient = this.canvasRef.nativeElement
       .getContext('2d')
       .createLinearGradient(0, 0, 0, 400);
@@ -30,7 +36,7 @@ export class ChartComponent implements OnInit {
 
     const datasets: any[] = [
       {
-        label: 'last',
+        label: this.label,
         data: this.points,
         backgroundColor: gradient,
         borderColor: '#e91e63',
@@ -38,7 +44,7 @@ export class ChartComponent implements OnInit {
       },
     ];
 
-    console.log(this.points, this.points.length);
+    // console.log(this.points, this.points.length);
 
     if (this.baseLine) {
       datasets.push({

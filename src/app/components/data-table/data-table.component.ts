@@ -8,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DataTableComponent implements OnInit {
   displayedColumns: string[];
 
+  @Input('label')
+  label: string;
+
   @Input('data')
   dataSource: [];
 
