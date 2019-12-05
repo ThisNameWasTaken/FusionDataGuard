@@ -29,13 +29,12 @@
             <span>
               EUR/GBP Missing Price 2019-12-05
             </span>
-            <!-- TODO: Add table; remove 6th column -->
           </mat-panel-title>
         </mat-expansion-panel-header>
 
         <app-chart
-          [points]="mkdData.points"
-          [labels]="mkdData.labels"
+          [points]="mkdData.points.slice(0, -1)"
+          [labels]="mkdData.labels.slice(0, -1)"
         ></app-chart>
       </mat-expansion-panel>
     </mat-accordion>
@@ -139,10 +138,36 @@
             <span>
               Position P&L exceeds tolerance 10%
             </span>
-            <!-- TODO: Add a graph with 7 datapoints  -->
-            <!-- TODO: Add a table with two folios  -->
           </mat-panel-title>
         </mat-expansion-panel-header>
+        <!-- TODO: Add a graph with 7 datapoints  -->
+        <!-- TODO: Add a table with two folios  -->
+        <app-chart
+          [points]="[11079, 11123, 11000, 11500, 11000, 11700, 10079]"
+          label="Market Value"
+          [labels]="[
+            '2019-11-27',
+            '2019-11-28',
+            '2019-11-29',
+            '2019-12-02',
+            '2019-12-03',
+            '2019-12-04',
+            '2019-12-05'
+          ]"
+        ></app-chart>
+        <app-data-table
+          [data]="[
+            {
+              entity: 'FundA',
+              instrument: 'EUR/USD',
+              'asset value': 10079,
+              'market value': 10079,
+              currency: 'EUR',
+              nav: 1078.2,
+              balance: 5002.3
+            }
+          ]"
+        ></app-data-table>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-expansion-panel>

@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { SpeechService } from 'src/app/services/speech.service';
 
 @Component({
   selector: 'app-layout',
@@ -16,7 +17,11 @@ export class AuthLayoutComponent implements OnInit {
 
   isVoiceOverOn = false;
 
-  constructor(private router: Router, private element: ElementRef) {
+  constructor(
+    private router: Router,
+    private element: ElementRef,
+    private speechService: SpeechService
+  ) {
     this.sidebarVisible = false;
   }
 
@@ -37,6 +42,16 @@ export class AuthLayoutComponent implements OnInit {
 
   toggleVoiceOver() {
     this.isVoiceOverOn = !this.isVoiceOverOn;
+
+    this.speechService.read(
+      `voice assist ${this.isVoiceOverOn ? 'on' : 'off'}`
+    );
+
+    setTimeout(() => {
+      this.speechService.read(
+        'You have 2 Market data alerts 2 Static data alerts 1 barrier monitoring alert and 1 position monitoring alert. Would you like me to read them?'
+      );
+    }, 2000);
   }
 
   sidebarOpen() {

@@ -3,8 +3,6 @@ import { FormBuilder, FormControl } from '@angular/forms';
 import { QueryBuilderConfig } from 'angular2-query-builder';
 import { MatBottomSheetRef } from '@angular/material';
 
-declare var query;
-
 @Component({
   selector: 'app-bottom-sheet',
   templateUrl: './bottom-sheet.component.html',
@@ -13,23 +11,49 @@ declare var query;
 export class BottomSheetComponent implements OnInit {
   public queryCtrl: FormControl;
 
-  public query = window['query'] || {
-    condition: 'and',
+  lrm = {
+    condition: 'AND',
     rules: [
-      { field: 'age', operator: '<=', entity: 'physical' },
       {
-        field: 'birthday',
-        operator: '=',
-        entity: 'nonphysical',
-        value: new Date(),
+        condition: 'AND',
+        rules: [
+          {
+            id: 'realized',
+            field: 'realized',
+            type: 'double',
+            input: 'number',
+            operator: 'between',
+            value: [20000, 30000],
+          },
+          {
+            id: 'Actual',
+            field: 'Actual vs Realized',
+            type: 'integer',
+            input: 'number',
+            operator: 'less',
+            value: 1000,
+          },
+        ],
+      },
+    ],
+    valid: true,
+  };
+
+  public query = window['query'] || {
+    condition: 'or',
+    rules: [
+      {
+        condition: 'and',
+        rules: [
+          { field: 'currencyPair', operator: '=', value: 'EUR/USD' },
+          { field: 'price', operator: '>', value: 1.1 },
+        ],
       },
       {
-        condition: 'or',
+        condition: 'and',
         rules: [
-          { field: 'gender', operator: '=', entity: 'physical' },
-          { field: 'occupation', operator: 'in', entity: 'nonphysical' },
-          { field: 'school', operator: 'is null', entity: 'nonphysical' },
-          { field: 'notes', operator: '=', entity: 'nonphysical' },
+          { field: 'currencyPair', operator: '=', value: 'EUR/GBP' },
+          { field: 'price', operator: '<', value: 1.2 },
         ],
       },
     ],
@@ -41,85 +65,78 @@ export class BottomSheetComponent implements OnInit {
       nonphysical: { name: 'Nonphysical Attributes' },
     },
     fields: {
-      age: { name: 'Age', type: 'number', entity: 'physical' },
-      gender: {
-        name: 'Gender',
+      realized: { name: 'Realized', type: 'number', entity: 'physical' },
+      currencyPair: {
+        name: 'currency pair',
         entity: 'physical',
         type: 'category',
         options: [
-          { name: 'Male', value: 'm' },
-          { name: 'Female', value: 'f' },
+          { name: 'EUR/USD', value: 'EUR/USD' },
+          { name: 'EUR/GBP', value: 'EUR/GBP' },
         ],
       },
-      name: { name: 'Name', type: 'string', entity: 'nonphysical' },
-      notes: {
-        name: 'Notes',
-        type: 'textarea',
-        operators: ['=', '!='],
-        entity: 'nonphysical',
-      },
-      educated: {
-        name: 'College Degree?',
-        type: 'boolean',
-        entity: 'nonphysical',
-      },
-      birthday: {
-        name: 'Birthday',
-        type: 'date',
-        operators: ['=', '<=', '>'],
-        defaultValue: () => new Date(),
-        entity: 'nonphysical',
-      },
-      school: {
-        name: 'School',
+      last: {
+        name: 'Last',
         type: 'string',
         nullable: true,
         entity: 'nonphysical',
       },
-      occupation: {
-        name: 'Occupation',
+      swift: {
+        name: 'Swift',
+        type: 'string',
+        nullable: true,
         entity: 'nonphysical',
-        type: 'category',
-        options: [
-          { name: 'Student', value: 'student' },
-          { name: 'Teacher', value: 'teacher' },
-          { name: 'Unemployed', value: 'unemployed' },
-          { name: 'Scientist', value: 'scientist' },
-        ],
+      },
+      threshold: {
+        name: 'Threshold',
+        type: 'number',
+        entity: 'physical',
+      },
+      isin: {
+        name: 'ISIN',
+        type: 'string',
+        entity: 'physical',
+      },
+      price: {
+        name: 'Price',
+        type: 'number',
+        entity: 'physical',
       },
     },
   };
 
   public config: QueryBuilderConfig = {
     fields: {
-      age: { name: 'Age', type: 'number' },
-      gender: {
-        name: 'Gender',
+      realized: { name: 'Realized', type: 'number' },
+      currencyPair: {
+        name: 'Currency',
         type: 'category',
         options: [
-          { name: 'Male', value: 'm' },
-          { name: 'Female', value: 'f' },
+          { name: 'EUR/USD', value: 'EUR/USD' },
+          { name: 'EUR/GBP', value: 'EUR/GBP' },
         ],
       },
-      name: { name: 'Name', type: 'string' },
-      notes: { name: 'Notes', type: 'textarea', operators: ['=', '!='] },
-      educated: { name: 'College Degree?', type: 'boolean' },
-      birthday: {
-        name: 'Birthday',
-        type: 'date',
-        operators: ['=', '<=', '>'],
-        defaultValue: () => new Date(),
+      last: {
+        name: 'Last',
+        type: 'string',
+        nullable: true,
       },
-      school: { name: 'School', type: 'string', nullable: true },
-      occupation: {
-        name: 'Occupation',
-        type: 'category',
-        options: [
-          { name: 'Student', value: 'student' },
-          { name: 'Teacher', value: 'teacher' },
-          { name: 'Unemployed', value: 'unemployed' },
-          { name: 'Scientist', value: 'scientist' },
-        ],
+      swift: {
+        name: 'Swift',
+        type: 'string',
+        nullable: true,
+      },
+      threshold: {
+        name: 'Threshold',
+        type: 'number',
+      },
+      isin: {
+        name: 'ISIN',
+        type: 'string',
+      },
+      price: {
+        name: 'Price',
+        type: 'number',
       },
     },
   };

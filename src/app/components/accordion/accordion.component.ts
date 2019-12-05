@@ -23,7 +23,5 @@ export class AccordionComponent implements OnInit {
 
     this.staticData = this.guardService.getStaticData();
     this.mkdData = this.guardService.getMarketDataAlerts();
-
-    console.log(this.mkdData);
   }
 }
