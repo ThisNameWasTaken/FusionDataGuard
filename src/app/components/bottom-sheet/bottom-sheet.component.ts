@@ -3,8 +3,6 @@ import { FormBuilder, FormControl } from '@angular/forms';
 import { QueryBuilderConfig } from 'angular2-query-builder';
 import { MatBottomSheetRef } from '@angular/material';
 
-declare var query;
-
 @Component({
   selector: 'app-bottom-sheet',
   templateUrl: './bottom-sheet.component.html',
@@ -46,9 +44,34 @@ export class BottomSheetComponent implements OnInit {
     rules: [
       {
         field: 'realized',
-        operator: 'greater',
-        entity: 'physical',
+        operator: '>=',
         value: 20000,
+        entity: 'physical',
+      },
+      {
+        field: 'currencyPair',
+        operator: '!=',
+        value: 'EUR/GBP',
+        entity: 'physical',
+      },
+      {
+        field: 'last',
+        operator: 'is not null',
+        entity: 'nonphysical',
+      },
+      {
+        field: 'threshold',
+        operator: '>',
+        value: 0.3,
+      },
+      {
+        field: 'swift',
+        operator: 'is not null',
+      },
+      {
+        field: 'isin',
+        operator: '=',
+        value: '12',
       },
     ],
   };
@@ -61,13 +84,35 @@ export class BottomSheetComponent implements OnInit {
     fields: {
       realized: { name: 'realized', type: 'number', entity: 'physical' },
       currencyPair: {
-        name: 'Currency',
+        name: 'currency pair',
         entity: 'physical',
         type: 'category',
         options: [
           { name: 'EUR/USD', value: 'EUR/USD' },
           { name: 'EUR/GBP', value: 'EUR/GBP' },
         ],
+      },
+      last: {
+        name: 'last',
+        type: 'string',
+        nullable: true,
+        entity: 'nonphysical',
+      },
+      swift: {
+        name: 'swift',
+        type: 'string',
+        nullable: true,
+        entity: 'nonphysical',
+      },
+      threshold: {
+        name: 'threshold',
+        type: 'number',
+        entity: 'physical',
+      },
+      isin: {
+        name: 'isin',
+        type: 'string',
+        entity: 'physical',
       },
     },
   };
@@ -82,6 +127,24 @@ export class BottomSheetComponent implements OnInit {
           { name: 'EUR/USD', value: 'EUR/USD' },
           { name: 'EUR/GBP', value: 'EUR/GBP' },
         ],
+      },
+      last: {
+        name: 'last',
+        type: 'string',
+        nullable: true,
+      },
+      swift: {
+        name: 'swift',
+        type: 'string',
+        nullable: true,
+      },
+      threshold: {
+        name: 'threshold',
+        type: 'number',
+      },
+      isin: {
+        name: 'isin',
+        type: 'string',
       },
     },
   };
