@@ -1,11 +1,15 @@
 <nav
-  class="navbar navbar-expand-lg bg-primary navbar-transparent navbar-absolute"
+  class="navbar mt-2 navbar-expand-lg bg-primary navbar-transparent navbar-absolute"
   color-on-scroll="500"
   *ngIf="isLoggedIn"
 >
   <div class="container">
     <div class="navbar-wrapper">
-      <a class="navbar-brand d-none d-sm-block" routerLink="/">
+      <a
+        class="navbar-brand d-none d-sm-block"
+        routerLink="/"
+        style="transform: translateY(-7px)"
+      >
         <img
           src="assets/img/FusionDataGuardLogo-on-dark.svg"
           width="64px"
