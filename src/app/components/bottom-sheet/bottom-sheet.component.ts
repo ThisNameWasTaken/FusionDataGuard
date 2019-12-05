@@ -13,24 +13,42 @@ declare var query;
 export class BottomSheetComponent implements OnInit {
   public queryCtrl: FormControl;
 
+  lrm = {
+    condition: 'AND',
+    rules: [
+      {
+        condition: 'AND',
+        rules: [
+          {
+            id: 'realized',
+            field: 'realized',
+            type: 'double',
+            input: 'number',
+            operator: 'between',
+            value: [20000, 30000],
+          },
+          {
+            id: 'Actual',
+            field: 'Actual vs Realized',
+            type: 'integer',
+            input: 'number',
+            operator: 'less',
+            value: 1000,
+          },
+        ],
+      },
+    ],
+    valid: true,
+  };
+
   public query = window['query'] || {
     condition: 'and',
     rules: [
-      { field: 'age', operator: '<=', entity: 'physical' },
       {
-        field: 'birthday',
-        operator: '=',
-        entity: 'nonphysical',
-        value: new Date(),
-      },
-      {
-        condition: 'or',
-        rules: [
-          { field: 'gender', operator: '=', entity: 'physical' },
-          { field: 'occupation', operator: 'in', entity: 'nonphysical' },
-          { field: 'school', operator: 'is null', entity: 'nonphysical' },
-          { field: 'notes', operator: '=', entity: 'nonphysical' },
-        ],
+        field: 'realized',
+        operator: 'greater',
+        entity: 'physical',
+        value: 20000,
       },
     ],
   };
@@ -41,50 +59,14 @@ export class BottomSheetComponent implements OnInit {
       nonphysical: { name: 'Nonphysical Attributes' },
     },
     fields: {
-      age: { name: 'Age', type: 'number', entity: 'physical' },
-      gender: {
-        name: 'Gender',
+      realized: { name: 'realized', type: 'number', entity: 'physical' },
+      currencyPair: {
+        name: 'Currency',
         entity: 'physical',
         type: 'category',
         options: [
-          { name: 'Male', value: 'm' },
-          { name: 'Female', value: 'f' },
-        ],
-      },
-      name: { name: 'Name', type: 'string', entity: 'nonphysical' },
-      notes: {
-        name: 'Notes',
-        type: 'textarea',
-        operators: ['=', '!='],
-        entity: 'nonphysical',
-      },
-      educated: {
-        name: 'College Degree?',
-        type: 'boolean',
-        entity: 'nonphysical',
-      },
-      birthday: {
-        name: 'Birthday',
-        type: 'date',
-        operators: ['=', '<=', '>'],
-        defaultValue: () => new Date(),
-        entity: 'nonphysical',
-      },
-      school: {
-        name: 'School',
-        type: 'string',
-        nullable: true,
-        entity: 'nonphysical',
-      },
-      occupation: {
-        name: 'Occupation',
-        entity: 'nonphysical',
-        type: 'category',
-        options: [
-          { name: 'Student', value: 'student' },
-          { name: 'Teacher', value: 'teacher' },
-          { name: 'Unemployed', value: 'unemployed' },
-          { name: 'Scientist', value: 'scientist' },
+          { name: 'EUR/USD', value: 'EUR/USD' },
+          { name: 'EUR/GBP', value: 'EUR/GBP' },
         ],
       },
     },
@@ -92,33 +74,13 @@ export class BottomSheetComponent implements OnInit {
 
   public config: QueryBuilderConfig = {
     fields: {
-      age: { name: 'Age', type: 'number' },
-      gender: {
-        name: 'Gender',
+      realized: { name: 'Realized', type: 'number' },
+      currencyPair: {
+        name: 'Currency',
         type: 'category',
         options: [
-          { name: 'Male', value: 'm' },
-          { name: 'Female', value: 'f' },
-        ],
-      },
-      name: { name: 'Name', type: 'string' },
-      notes: { name: 'Notes', type: 'textarea', operators: ['=', '!='] },
-      educated: { name: 'College Degree?', type: 'boolean' },
-      birthday: {
-        name: 'Birthday',
-        type: 'date',
-        operators: ['=', '<=', '>'],
-        defaultValue: () => new Date(),
-      },
-      school: { name: 'School', type: 'string', nullable: true },
-      occupation: {
-        name: 'Occupation',
-        type: 'category',
-        options: [
-          { name: 'Student', value: 'student' },
-          { name: 'Teacher', value: 'teacher' },
-          { name: 'Unemployed', value: 'unemployed' },
-          { name: 'Scientist', value: 'scientist' },
+          { name: 'EUR/USD', value: 'EUR/USD' },
+          { name: 'EUR/GBP', value: 'EUR/GBP' },
         ],
       },
     },
