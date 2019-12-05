@@ -14,6 +14,8 @@ export class AuthLayoutComponent implements OnInit {
 
   isLoggedIn = true;
 
+  isVoiceOverOn = false;
+
   constructor(private router: Router, private element: ElementRef) {
     this.sidebarVisible = false;
   }
@@ -21,7 +23,7 @@ export class AuthLayoutComponent implements OnInit {
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
 
-    this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+    this.toggleButton = document.getElementsByClassName('navbar-toggler')[0];
     this._router = this.router.events.subscribe(event => {
       if (!(event instanceof NavigationEnd)) return;
 
@@ -32,6 +34,11 @@ export class AuthLayoutComponent implements OnInit {
       }
     });
   }
+
+  toggleVoiceOver() {
+    this.isVoiceOverOn = !this.isVoiceOverOn;
+  }
+
   sidebarOpen() {
     var $toggle = document.getElementsByClassName('navbar-toggler')[0];
     const toggleButton =
@@ -82,7 +89,6 @@ export class AuthLayoutComponent implements OnInit {
   sidebarClose() {
     var $toggle = document.getElementsByClassName('navbar-toggler')[0];
     const body = document.getElementsByTagName('body')[0];
-    this.toggleButton.classList.remove('toggled');
     var $layer = document.createElement('div');
     $layer.setAttribute('class', 'close-layer');
 

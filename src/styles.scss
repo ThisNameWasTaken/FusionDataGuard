@@ -3,151 +3,194 @@
 
 /* You can add global styles to this file, and also import other style files */
 .mat-raised-button {
-	.mat-button-ripple {
-		&.mat-ripple {
-			& > * {
-				background: rgba(#fff, 0.235) !important;
-			}
-		}
-	}
+  .mat-button-ripple {
+    &.mat-ripple {
+      & > * {
+        background: rgba(#fff, 0.235) !important;
+      }
+    }
+  }
 }
 
 .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
-	background: rgba(#ab47bc, 0.235) !important;
+  background: rgba(#ab47bc, 0.235) !important;
 }
 
 .cdk-overlay-connected-position-bounding-box {
-	z-index: 2000 !important;
+  z-index: 2000 !important;
 }
 
 .mat-option {
-	&:hover {
-		background: rgba(#ab47bc, 0.12) !important;
-	}
+  &:hover {
+    background: rgba(#ab47bc, 0.12) !important;
+  }
 
-	.mat-option-ripple {
-		& > * {
-			background: rgba(#ab47bc, 0.12) !important;
-		}
-	}
+  .mat-option-ripple {
+    & > * {
+      background: rgba(#ab47bc, 0.12) !important;
+    }
+  }
 }
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-	color: rgba(#000, 0.87) !important;
+  color: rgba(#000, 0.87) !important;
 }
 
 .mat-form-field-infix {
-	border-top: 0.5rem solid transparent !important;
+  border-top: 0.5rem solid transparent !important;
 }
 
 .q-row {
-	display: flex;
+  display: flex;
 
-	mat-form-field.mat-form-field {
-		width: auto;
-		flex-grow: 1;
-		display: inline-block;
-	}
+  mat-form-field.mat-form-field {
+    width: auto;
+    flex-grow: 1;
+    display: inline-block;
+  }
 
-	mat-form-field {
-		min-width: 48px;
-	}
+  mat-form-field {
+    min-width: 48px;
+  }
 
-	.q-button-group.q-right-align {
-		order: 5;
-		flex-grow: auto;
-	}
+  .q-button-group.q-right-align {
+    order: 5;
+    flex-grow: auto;
+  }
 }
 
 mat-expansion-panel-header {
-	height: 54px !important;
+  height: 54px !important;
 
-	.mat-content {
-		overflow: visible;
-	}
+  .mat-content {
+    overflow: visible;
+  }
 
-	.mat-badge-medium.mat-badge-above {
-		.mat-badge-content {
-			top: -6px;
-		}
-	}
+  .mat-badge-medium.mat-badge-above {
+    .mat-badge-content {
+      top: -6px;
+    }
+  }
 
-	.mat-badge-medium.mat-badge-after {
-		.mat-badge-content {
-			right: -24px;
-		}
-	}
+  .mat-badge-medium.mat-badge-after {
+    .mat-badge-content {
+      right: -24px;
+    }
+  }
 }
 
 mat-bottom-sheet-container.mat-bottom-sheet-container {
-	width: calc(100vw - 54px) !important;
-	max-height: calc(100vh) !important;
+  width: calc(100vw - 54px) !important;
+  max-height: calc(100vh) !important;
 }
 
 [color='success'] {
-	[disabled] & {
-		.mat-badge-content {
-			background: #ccff90 !important;
-		}
-	}
+  [disabled] & {
+    .mat-badge-content {
+      background: #ccff90 !important;
+    }
+  }
 
-	.mat-badge-content {
-		background: #76ff03 !important;
-		color: rgba(#000, 0.87);
-	}
+  .mat-badge-content {
+    background: #76ff03 !important;
+    color: rgba(#000, 0.87);
+  }
 }
 
 mat-accordion[displayMode='flat'] {
-	mat-expansion-panel {
-		box-shadow: none !important;
-		border-bottom: 1px solid rgba(#000, 0.12);
-	}
+  mat-expansion-panel {
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(#000, 0.12);
+  }
 }
 
 .mat-fab {
-	$icon-size: 32px;
+  $icon-size: 32px;
 
-	& .mat-icon {
-		transition: transform 0.3s ease-out, opacity 0.15s ease-in 0.05s;
+  & .mat-icon {
+    transition: transform 0.3s ease-out, opacity 0.15s ease-in 0.05s;
 
-		&--on {
-			transform: rotate(90deg);
-			opacity: 0;
-		}
+    &--on {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
 
-		&--off {
-			transform: rotate(0deg);
-			opacity: 1;
-		}
-	}
+    &--off {
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
 
-	&--on {
-		& .mat-icon {
-			&--on {
-				transform: rotate(0deg);
-				opacity: 1;
-			}
+  &--on {
+    & .mat-icon {
+      &--on {
+        transform: rotate(0deg);
+        opacity: 1;
+      }
 
-			&--off {
-				transform: rotate(90deg);
-				opacity: 0;
-			}
-		}
-	}
+      &--off {
+        transform: rotate(90deg);
+        opacity: 0;
+      }
+    }
+  }
 
-	& > .mat-button-wrapper {
-		position: relative;
-		width: 100%;
-		height: 100%;
+  & > .mat-button-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-		& > .mat-icon {
-			position: absolute;
-			top: calc(50% - #{$icon-size / 2});
-			left: calc(50% - #{$icon-size / 2});
-			display: block;
-			font-size: $icon-size;
-			width: $icon-size;
-			height: $icon-size;
-		}
-	}
+    & > .mat-icon {
+      position: absolute;
+      top: calc(50% - #{$icon-size / 2});
+      left: calc(50% - #{$icon-size / 2});
+      display: block;
+      font-size: $icon-size;
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+}
+
+.nav-link {
+  position: relative;
+
+  &[aria-pressed='true'] {
+    & .mat-icon {
+      &--on {
+        opacity: 1;
+      }
+
+      &--off {
+        opacity: 0;
+      }
+    }
+  }
+
+  &[aria-pressed='false'] {
+    & .mat-icon {
+      &--on {
+        opacity: 0;
+      }
+
+      &--off {
+        opacity: 1;
+      }
+    }
+  }
+
+  & .mat-icon {
+    transition: opacity 0.15s ease-in-out;
+
+    &--off {
+      position: absolute !important;
+      left: 15px;
+      top: 15px !important;
+      z-index: 1;
+    }
+  }
+}
+
+.navbar .collapse .navbar-nav .nav-item .nav-link:not(.btn) .material-icons {
+  margin-top: 1px !important;
 }
