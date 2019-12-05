@@ -1,17 +1,25 @@
 # Fusion Data Guard
 
-## Start dev server
+## Launch demo
+
+```sh
+npm install && npm start
+```
+
+## Scripts
+
+### Start dev server
 
 ```sh
 npm start
 ```
 
-## Build for web
+### Build for web
 
 ```sh
 npm run build
 ```
 
-## Build for OpenFin
+### Build for OpenFin
 
 Run `npm run server` and then `npm run build:openfin`
