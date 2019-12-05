@@ -3,6 +3,8 @@ import { FormBuilder, FormControl } from '@angular/forms';
 import { QueryBuilderConfig } from 'angular2-query-builder';
 import { MatBottomSheetRef } from '@angular/material';
 
+declare var query;
+
 @Component({
   selector: 'app-bottom-sheet',
   templateUrl: './bottom-sheet.component.html',
@@ -11,7 +13,7 @@ import { MatBottomSheetRef } from '@angular/material';
 export class BottomSheetComponent implements OnInit {
   public queryCtrl: FormControl;
 
-  public query = {
+  public query = window['query'] || {
     condition: 'and',
     rules: [
       { field: 'age', operator: '<=', entity: 'physical' },
