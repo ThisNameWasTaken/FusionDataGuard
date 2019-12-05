@@ -1,10 +1,14 @@
 # Fusion Data Guard
 
-## Launch demo
+## How to launch demo
+
+Open up a terminal in the folder with the package.json file and run.
 
 ```sh
 npm install && npm start
 ```
+
+After it finishes installing the packages and it starts the server go to `http://localhost:4200'
 
 ## Scripts
 
