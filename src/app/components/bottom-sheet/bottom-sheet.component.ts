@@ -40,38 +40,21 @@ export class BottomSheetComponent implements OnInit {
   };
 
   public query = window['query'] || {
-    condition: 'and',
+    condition: 'or',
     rules: [
       {
-        field: 'realized',
-        operator: '>=',
-        value: 20000,
-        entity: 'physical',
+        condition: 'and',
+        rules: [
+          { field: 'currencyPair', operator: '=', value: 'EUR/USD' },
+          { field: 'price', operator: '>', value: 1.1 },
+        ],
       },
       {
-        field: 'currencyPair',
-        operator: '!=',
-        value: 'EUR/GBP',
-        entity: 'physical',
-      },
-      {
-        field: 'last',
-        operator: 'is not null',
-        entity: 'nonphysical',
-      },
-      {
-        field: 'threshold',
-        operator: '>',
-        value: 0.3,
-      },
-      {
-        field: 'swift',
-        operator: 'is not null',
-      },
-      {
-        field: 'isin',
-        operator: '=',
-        value: '12',
+        condition: 'and',
+        rules: [
+          { field: 'currencyPair', operator: '=', value: 'EUR/GBP' },
+          { field: 'price', operator: '<', value: 1.2 },
+        ],
       },
     ],
   };
@@ -82,7 +65,7 @@ export class BottomSheetComponent implements OnInit {
       nonphysical: { name: 'Nonphysical Attributes' },
     },
     fields: {
-      realized: { name: 'realized', type: 'number', entity: 'physical' },
+      realized: { name: 'Realized', type: 'number', entity: 'physical' },
       currencyPair: {
         name: 'currency pair',
         entity: 'physical',
@@ -93,25 +76,30 @@ export class BottomSheetComponent implements OnInit {
         ],
       },
       last: {
-        name: 'last',
+        name: 'Last',
         type: 'string',
         nullable: true,
         entity: 'nonphysical',
       },
       swift: {
-        name: 'swift',
+        name: 'Swift',
         type: 'string',
         nullable: true,
         entity: 'nonphysical',
       },
       threshold: {
-        name: 'threshold',
+        name: 'Threshold',
         type: 'number',
         entity: 'physical',
       },
       isin: {
-        name: 'isin',
+        name: 'ISIN',
         type: 'string',
+        entity: 'physical',
+      },
+      price: {
+        name: 'Price',
+        type: 'number',
         entity: 'physical',
       },
     },
@@ -129,22 +117,26 @@ export class BottomSheetComponent implements OnInit {
         ],
       },
       last: {
-        name: 'last',
+        name: 'Last',
         type: 'string',
         nullable: true,
       },
       swift: {
-        name: 'swift',
+        name: 'Swift',
         type: 'string',
         nullable: true,
       },
       threshold: {
-        name: 'threshold',
+        name: 'Threshold',
         type: 'number',
       },
       isin: {
-        name: 'isin',
+        name: 'ISIN',
         type: 'string',
+      },
+      price: {
+        name: 'Price',
+        type: 'number',
       },
     },
   };
