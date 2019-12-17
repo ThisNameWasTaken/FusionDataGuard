@@ -1,0 +1,21 @@
+{
+  "short_name": "Fusion Data Guard",
+  "name": "Fusion Data Guard",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.png",
+      "type": "image/png",
+      "sizes": "92x92"
+    },
+    {
+      "src": "/assets/img/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ab47bc",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ab47bc"
+}

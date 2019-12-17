@@ -1,0 +1,16 @@
+.card-stream {
+	& > .card-header {
+		& > .card-icon {
+			margin-top: -55px !important;
+			@include box-shadow($bmd-shadow-8dp);
+
+			& > i {
+				$size: 96px;
+				width: $size !important;
+				height: $size !important;
+				line-height: $size !important;
+				font-size: calc(#{$size} * 3 / 4) !important;
+			}
+		}
+	}
+}
